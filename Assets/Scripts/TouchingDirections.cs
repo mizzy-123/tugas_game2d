@@ -19,14 +19,17 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField]
     private bool _isGrounded;
 
-    public bool isGrounded { 
-        get {
+    public bool isGrounded
+    {
+        get
+        {
             return _isGrounded;
-        } 
-        private set {
+        }
+        private set
+        {
             _isGrounded = value;
             animator.SetBool(AnimationStrings.isGrounded, value);
-        } 
+        }
     }
 
     [SerializeField]
@@ -71,7 +74,7 @@ public class TouchingDirections : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

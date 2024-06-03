@@ -43,12 +43,13 @@ public class PlayerController : MonoBehaviour
                 {
                     return 0;
                 }
-            } else
+            }
+            else
             {
                 // Movement locked
                 return 0;
             }
-            
+
         }
     }
 
@@ -174,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.started && touchingDirections.isGrounded && CanMove)
+        if (context.started && touchingDirections.isGrounded && CanMove)
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);

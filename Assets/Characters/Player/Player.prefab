@@ -126,7 +126,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   airWalkSpeed: 3
-  jumpImpulse: 11
+  jumpImpulse: 12
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -299,11 +299,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0028292262, y: -0.04146402}
-  m_Size: {x: 0.09318503, y: 0.2631513}
+  m_Offset: {x: 0.0028292262, y: -0.04273622}
+  m_Size: {x: 0.09318503, y: 0.26569575}
   m_Direction: 0
 --- !u!114 &8124668609304622693
 MonoBehaviour:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 1
+    useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0

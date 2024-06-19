@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
@@ -150,6 +151,10 @@ public class PlayerController : MonoBehaviour
         if(!damageable.LockVelocity)
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        if(!IsAlive){
+             SceneManager.LoadSceneAsync("game over");
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -221,5 +226,16 @@ public class PlayerController : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+     // Fungsi ini dipanggil ketika player memasuki collider
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Cek apakah player menyentuh tile dengan tag "ExitTile"
+        if (collision.CompareTag("ExitTile"))
+        {
+            // Pindah ke scene berikutnya atau scene tertentu
+            SceneManager.LoadScene("HomeScreen"); // Ganti "NextScene" dengan nama scene yang dituju
+        }
     }
 }

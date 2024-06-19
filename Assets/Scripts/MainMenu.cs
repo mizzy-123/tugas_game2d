@@ -10,9 +10,17 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("Level1");
     }
 
+    public void Back()
+    {
+        SceneManager.LoadSceneAsync("HomeScreen");
+    }
+
     public void  QuitGame()
     {
+        Debug.Log("QuitGame function called");
         Application.Quit();
     }
+
+
 
 }
